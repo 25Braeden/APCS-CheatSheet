@@ -7,7 +7,7 @@ Fairly in-depth breakdown of everything that we've covered in class this year, a
 > [!NOTE]
 > I'm organizing this by unit according to college board. If rushed on time check [here](https://apcentral.collegeboard.org/courses/ap-computer-science-a) to see which topics you should prioritize.
 
-- Unit 1: Primative Types
+- [Unit 1: Primative Types](#primitive-types)
 - Unit 2: Using Objects
 - Unit 3: Boolean Expressions and If Statements
 - Unit 4: Iteration
@@ -61,5 +61,6 @@ Other types (`byte`, `short`, `long`, `float`) **exist**, but you **likely donâ€
 ```java
 int x = 5;
 Integer objX = x;  // Auto-boxing: converting primitive to object
-
+ArrayList<char> someList; // -> DOESNT WORK
+ArrayList<Character> someList; // -> Does work, as we wrapped the primitive type in an object
 ```
