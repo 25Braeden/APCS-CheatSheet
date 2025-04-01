@@ -20,31 +20,46 @@ Fairly in-depth breakdown of everything that we've covered in class this year, a
 
 ## Java Primitive Types
 
-In Java, there are **8 primitive types**, and most of them are **signed**, meaning they can represent both positive and negative values.
+In Java, **primitive types are the most basic kinds of data** — things like numbers, characters, and booleans. They are **not objects**, which means they don’t have methods (you can't do `int.someMethod()`), and they’re stored more efficiently in memory.
 
-### ✅ List of Primitive Types with Ranges
+> 🧠 **Why it matters**: Since primitives aren’t objects, they behave differently than things like `String` or `ArrayList`. You can’t call methods on them or use `.equals()` — you use `==` to compare them directly.
 
-| **Type**  | **Bits** | **Min Value**                | **Max Value**               | **Notes**                      |
-| --------- | -------- | ---------------------------- | --------------------------- | ------------------------------ |
-| `byte`    | 8        | `-128`                       | `127`                       | 2⁷ range (signed)              |
-| `short`   | 16       | `-32,768`                    | `32,767`                    | 2¹⁵ range                      |
-| `int`     | 32       | `-2,147,483,648`             | `2,147,483,647`             | 2³¹ range                      |
-| `long`    | 64       | `-9,223,372,036,854,775,808` | `9,223,372,036,854,775,807` | 2⁶³ range                      |
-| `float`   | 32       | ~`-3.4028235e+38`            | ~`3.4028235e+38`            | Approximate (IEEE 754)         |
-| `double`  | 64       | ~`-1.7976931348623157e+308`  | ~`1.7976931348623157e+308`  | Approximate (IEEE 754)         |
-| `char`    | 16       | `'\u0000'` (0)               | `'\uffff'` (65,535)         | **Unsigned** Unicode character |
-| `boolean` | 1 (JVM)  | `false`                      | `true`                      | No numeric range               |
+### 🎯 Focus for the AP Exam
+
+The **AP Computer Science A exam** mainly focuses on these four primitives:
+
+| **Type**  | **Example**            | **Description**                      |
+| --------- | ---------------------- | ------------------------------------ |
+| `int`     | `int x = 42;`          | Whole numbers                        |
+| `double`  | `double pi = 3.14;`    | Decimal numbers (floating-point)     |
+| `boolean` | `boolean flag = true;` | True or false logic                  |
+| `char`    | `char c = 'A';`        | Single characters (in single quotes) |
+
+Other types (`byte`, `short`, `long`, `float`) **exist**, but you **likely don’t need to know them** for the exam.
 
 ---
 
-### 🔍 Notes
+### ✅ Quick Reference Table
 
-- All numeric types are **signed**, except for `char`, which is **unsigned**.
-- Use wrapper class constants to access limits in Java code:
+| **Type**  | **Size** | **Example**            | **Notes**                             |
+| --------- | -------- | ---------------------- | ------------------------------------- |
+| `int`     | 32 bits  | `int x = 5;`           | Used for most whole numbers           |
+| `double`  | 64 bits  | `double d = 3.14;`     | Default for decimals                  |
+| `boolean` | ~1 bit   | `boolean isOn = true;` | Only values: `true` or `false`        |
+| `char`    | 16 bits  | `char letter = 'A';`   | Represents a single Unicode character |
+
+> 💡 **Tip**: Characters use single quotes (`'A'`), while strings use double quotes (`"Hello"`). Mixing them up causes compiler errors!
+
+---
+
+### 🛠️ Not Objects? What Does That Mean?
+
+- You can't use `.equals()` or call methods on primitive values.
+- You compare primitives with `==` (e.g., `if (x == 5)`).
+- Wrapper classes (`Integer`, `Double`, `Boolean`, `Character`) exist if you _need_ object-like behavior (like putting primitives in an `ArrayList`).
 
 ```java
-System.out.println(Byte.MAX_VALUE);     // 127
-System.out.println(Integer.MIN_VALUE);  // -2147483648
-System.out.println(Character.MAX_VALUE); // 65535
+int x = 5;
+Integer objX = x;  // Auto-boxing: converting primitive to object
 
 ```
