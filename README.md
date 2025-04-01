@@ -4,7 +4,7 @@ Fairly in-depth breakdown of everything that we've covered in class this year, a
 
 ## Table of Contents
 
-> [!Note] <br />
+> [!NOTE] <br />
 > I'm organizing this by unit according to college board. If rushed on time check [here](https://apcentral.collegeboard.org/courses/ap-computer-science-a) to see which topics you should prioritize.
 
 - Unit 1: Primative Types
